@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/images/logosma.png">
+  <title>Website Sekolah</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Racing+Sans+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Racing+Sans+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #F5F5F5;
+  }
+
+  nav {
+    background-color: #003366;
+    padding: 0 20px;
+    margin-top: 0;
+  }
+  marquee{
+    background-color: #1E1E1E;
+    color: #ffffff;
+    width: 100%;
+    height: 35px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    }
+
+    section{
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  /* animation */
+
+  
+  /* animation */
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    margin-top:-6.2px;
+    position: sticky;
+    z-index: 999999;
+    top: 0;
+  }
+
+  .nav-logo {
+    text-align: center;
+    justify-content: center;
+    color: #F1F5F9;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover {
+    color: #0077cc;
+  }
+
+  .dropdown {
+    position: relative;
+    z-index: 20;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #003366;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    z-index: 1;
+    border-radius: 5px;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 10px;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Hamburger menu */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  #close-icon {
+    color: white; /* Warna ikon silang */
+    font-size: 24px; /* Ukuran ikon */
+  }
+  
+  #menu-icon {
+    color: white; 
+    font-size: 24px; 
+  }
+  
+  /* Responsive */
+  @media (max-width: 1367px) {
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: 	#003366;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 20px;
+      z-index: 20;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+
+  
+ 
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 2000px;
+    margin: 0 auto; 
+    background-color: #1E1E1E;
+
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* ini penting */
+    
+  }
+
+  .slide {
+    min-width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    
+  }
+
+  .slide .caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0,0,0,0.4);
+
+    padding: 10px;
+    cursor: pointer;
+    z-index: 0;
+  }
+  .arrow:hover{
+    background-color: rgba(0,0,0,0.7);
+  }
+
+  .arrow.left { 
+    left: 10px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+ }
+  .arrow.right { 
+    right: 10px; 
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;}
+
+  .dots {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background-color: #0077cc;
+  }
+
+  .quote-box {
+    background-color: #0b2c64;
+    display: flex;
+    align-items: center;
+    padding: 20px 60px;
+    font-size: 18px;
+    height: 40px;
+    -webkit-box-shadow: 1px 27px 86px -13px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 1px 27px 86px -13px rgba(66, 68, 90, 1);
+    box-shadow: 1px 27px 86px -13px rgba(66, 68, 90, 1);
+  }
+
+  .quote-box .label {
+    font-weight: bold;
+    color: #0077cc;
+    margin-right: 15px;
+  }
+
+  #quote-text {
+    transition: opacity 0.5s;
+    color: white;
+  }
+
+  @media(max-width: 768px) {
+    .slide .caption { font-size: 16px; }
+    .quote-box {
+        font-size: 16px; 
+        object-fit: contain;
+        padding: 20px 20px;
+    }
+    .slide{
+        height: 500px;
+    }
+    .quote-box {
+      flex-direction: row;
+      align-items: flex-start;
+      height: auto;
+      padding: 15px 60px 15px 60px;
+      font-size: 16px;
+      gap: 20px;
+    }
+  
+    .quote-box .label {
+      margin-bottom: 5px;
+      margin-right: 0;
+    }
+  
+    #quote-text {
+      font-size: 14px;
+    }
+    
+  }
+  @media(max-width: 480px) {
+    .kutipan-box {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 50px 10px;
+      }
+    
+    .teks-kutipan {
+        font-size: 10px;
+
+     }
+     .quote-box {
+      padding-top: 20px;
+      align-content: center;
+      display: flex;
+      flex-direction: row;
+      gap: 0px;
+      font-size: 10px;
+      padding: 0px 10px;
+    }
+  
+    #quote-text {
+      padding: 8px;
+      font-size: 10px;
+    }
+    .quote-box .label {
+      margin-top: 7px;
+      font-size: 10px;
+      width: 100px;
+    }
+  }
+
+  /* Formulir */
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  .contact-form button {
+    background-color: #f1c40f;
+    color: #2c3e50;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .contact-form button:hover {
+    background-color: #e2b607;
+  }
+
+
+  /* Back to top */
+  .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #f1c40f;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footer-section {
+      text-align: center;
+    }
+  }
+
+  /* Animasi */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  header {
+      background-color: #0077cc;
+      color: white;
+      padding: 1.5em;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 0.3em;
+      font-size: 2em;
+    }
+
+    header p {
+      font-size: 1em;
+    }
+
+    .filter-bar {
+      text-align: center;
+      padding: 1em;
+    }
+
+    .filter-bar button {
+      margin: 0.3em;
+      padding: 0.6em 1.2em;
+      border: none;
+      background: #0077cc;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: inherit;
+    }
+
+    .filter-bar button:hover {
+      background: #005fa3;
+    }
+
+    .library {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 2em;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    
+    @keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    .book {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s;
+      position: relative;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .book:hover {
+      transform: translateY(-5px);
+    }
+
+    .book img {
+      width: 100%;
+      display: block;
+    }
+
+    .book-info {
+      padding: 1em;
+      background: #f0f8ff;
+    }
+
+    .book-info h3 {
+      margin: 0 0 0.5em;
+      font-size: 1.1em;
+    }
+
+    .book-info p {
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      padding: 1em;
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 600px;
+      width: 100%;
+      padding: 2em;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-content img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1em;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 1.5rem;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .modal-content button {
+      margin-top: 1em;
+      padding: 0.6em 1.5em;
+      background: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+
+      .modal-content {
+        padding: 1em;
+      }
+    }
+  
+  /* Footer */
+  
+
+  .footer {
+    background: #0b2c64;
+    color: #fff;
+    padding: 50px 50px 0px;
+    animation: fadeIn 1s ease;
+  }
+
+  .footer-grid {
+    margin: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+    max-width: 1600px;
+    margin: auto;
+  }
+
+  .footer-section h2, .footer-section h3 {
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    color: #eee;
+    font-size: 14px;
+    line-height: 1.6;
+    text-decoration: none;
+  }
+
+  .footer-section a:hover {
+    color: #0077cc;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+
+  .social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    transition: transform 0.3s;
+  }
+
+  .social-icons a:hover {
+    transform: scale(1.2);
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 13px;
+    color: #ccc;
+  }
+
+  /* Formulir */
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  .contact-form button {
+    background-color: white;
+    color: #2c3e50;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .contact-form button:hover {
+    background-color: #0077cc;
+  }
+
+  /* Back to top */
+  .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0077cc;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    color: white;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footer-section {
+      text-align: center;
+    }
+  }
+
+  /* Animasi */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* Footer */
+    </style>
+  <div><marquee behavior="" direction="">Selamat datang di website resmi sekolah kami! || Tahun Ajaran Baru 2025/2026 telah dimulai – Mari kita songsong dengan semangat belajar dan pelayanan terbaik! || Cek info terbaru di menu Informasi Sekolah dan Blog Guru.</marquee></div>
+
+<nav id="header">
+  <div class="navbar">
+    <div class="nav-logo"><img src="/images/logosma.png" height="30px" width="30px" alt=""></div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars" id="menu-icon"></i>
+      <i class="fas fa-times" id="close-icon" style="display: none;"></i>
+    </div>
+    
+
+    <div class="nav-links" id="navLinks">
+      <a href="/index.html">HOME</a>
+      <div class="dropdown">
+        <a>TENTANG KAMI ▾</a>
+        <div class="dropdown-content">
+          <a href="/visimisi/visimisi.html">Visi Misi</a>
+          <a href="/sejarah/sejarah.html">Sejarah</a>
+        </div>
+      </div>
+      <a href="/berita/berita.html">BERITA & PENGUMUMAN</a>
+      <a href="/guru/guru.html">GURU DAN KARYAWAN</a>
+      <a href="/learning/learning.html">E-LEARNING</a>
+      <a href="/ekskul/ekskul.html">EKSTRAKURIKULER</a>
+      <a href="/perpustakaan/perpustakaan.html">E-PERPUSTAKAAN</a>
+        <a href="/galeri/galeri.html">GALERI</a>
+
+    </div>
+  </div>
+</nav>
+
+<div class="slider-container">
+  <div class="slides" id="slideTrack">
+    <div class="slide" style="background-image: url('/images/gedung\ sekolah-artguru.png');">
+      <div class="caption">Gedung Sekolah</div>
+    </div>
+    <div class="slide" style="background-image: url('/images/Gerbang\ Sekolah-artguru.png');">
+      <div class="caption">Gerbang Sekolah</div>
+    </div>
+    <div class="slide" style="background-image: url('/images/ruangkelas-artguru.png');">
+      <div class="caption">Ruang Kelas Siswa</div>
+    </div>
+  </div>
+
+  <div class="arrow left" onclick="prevSlide()"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+  <div class="arrow right" onclick="nextSlide()"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+
+  <div class="dots" id="dots"></div>
+</div>
+
+<!-- KUTIPAN OTOMATIS -->
+<div class="quote-box">
+  <span class="label">📘MOTTO</span>
+  <span id="quote-text">Cerdas, Tangguh, Keren.</span>
+</div>
+
+<header>
+    <h1>e-Perpustakaan Sekolah</h1>
+    <p>Temukan dan baca buku favoritmu di mana saja, kapan saja!</p>
+  </header>
+
+  <div class="filter-bar">
+    <button onclick="filterBooks('all')">Semua</button>
+    <button onclick="filterBooks('fiksi')">Fiksi</button>
+    <button onclick="filterBooks('nonfiksi')">Non-Fiksi</button>
+    <button onclick="filterBooks('pelajaran')">Pelajaran</button>
+  </div>
+
+  <div class="library" id="library">
+    <div class="book" data-category="fiksi" data-title="Laskar Pelangi" data-author="Andrea Hirata" data-desc="Kisah inspiratif anak-anak Belitong." data-img="https://picsum.photos/id/1011/400/300">
+      <img src="https://picsum.photos/id/1011/400/300" alt="Laskar Pelangi">
+      <div class="book-info">
+        <h3>Laskar Pelangi</h3>
+        <p>Andrea Hirata</p>
+      </div>
+    </div>
+    <div class="book" data-category="pelajaran" data-title="Fisika Dasar" data-author="Halliday & Resnick" data-desc="Panduan lengkap belajar fisika." data-img="https://picsum.photos/id/1012/400/300">
+      <img src="https://picsum.photos/id/1012/400/300" alt="Fisika">
+      <div class="book-info">
+        <h3>Fisika Dasar</h3>
+        <p>Halliday & Resnick</p>
+      </div>
+    </div>
+    <div class="book" data-category="nonfiksi" data-title="Sapiens" data-author="Yuval Noah Harari" data-desc="Sejarah singkat umat manusia." data-img="https://picsum.photos/id/1016/400/300">
+      <img src="https://picsum.photos/id/1016/400/300" alt="Sapiens">
+      <div class="book-info">
+        <h3>Sapiens</h3>
+        <p>Yuval N. Harari</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <img id="modalImg" src="" alt="">
+      <p id="modalAuthor"></p>
+      <p id="modalDesc"></p>
+      <button onclick="alert('Buku berhasil dipinjam!')">Pinjam Buku</button>
+    </div>
+  </div>
+
+<footer class="footer">
+    <div class="footer-grid">
+      <!-- Info Sekolah -->
+      <div class="footer-section">
+        <h2>SMA Negeri 999</h2>
+        <p>Jl. Pendidikan No.123, Kota Pelajar</p>
+        <p>Email: info@sman999.sch.id</p>
+        <p>Telp: (021) 1234567</p>
+      </div>
+
+      <!-- Navigasi -->
+      <div class="footer-section">
+        <h3>Menu</h3>
+        <ul class="fast-link">
+          <li><a href="/index.html">Beranda</a></li>
+          <li><a href="/sejarah/sejarah.html">Tentang Kami</a></li>
+          <li><a href="/berita/berita.html">Berita & Pengumuman</a></li>
+          <li><a href="/guru/guru.html">Guru dan Karyawan</a></li>
+          <li><a href="/ekskul/ekskul.html">Ekstrakurikuler</a></li>
+          <li><a href="/perpustakaan/perpustakaan.html">E-Perpustakaan</a></li>
+          <li><a href="/galeri/galeri.html">Galeri</a></li>
+        </ul>
+      </div>
+
+      <!-- Sosial Media -->
+      <div class="footer-section">
+        <h3>Ikuti Kami</h3>
+        <div class="social-icons">
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/youtube-play.png" alt="YouTube" /></a>
+        </div>
+      </div>
+
+      <!-- Lokasi -->
+      <div class="footer-section">
+        <h3>Lokasi</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31688.451824624118!2d106.8166667!3d-6.2000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1f8b7c2d3a3%3A0x0!2sSekolah%20Contoh!5e0!3m2!1sen!2sid!4v1683313170880"
+          width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <!-- Hubungi Kami -->
+      <div class="footer-section contact-form">
+        <h3>Hubungi Kami</h3>
+        <form id="footer-contact-form">
+          <input type="text" placeholder="Nama Anda" required>
+          <input type="email" placeholder="Email Anda" required>
+          <textarea placeholder="Pesan Anda" required></textarea>
+          <button type="submit">Kirim</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span>Sman999</p>
+    </div>
+  </footer>
+
+  <!-- ======= WhatsApp & Back to Top ======= -->
+
+  <button class="back-to-top" onclick="scrollToTop()"><i class="fa-solid fa-up-long"></i>
+  </button>
+
+  <script>
+    function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const hamburger = document.getElementById('hamburger');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    navLinks.classList.toggle('active');
+    
+    // Toggle ikon
+    if (navLinks.classList.contains('active')) {
+      menuIcon.style.display = 'none';
+      closeIcon.style.display = 'block';
+    } else {
+      menuIcon.style.display = 'block';
+      closeIcon.style.display = 'none';
+    }
+  }
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    const slideTrack = document.getElementById('slideTrack');
+  
+    function showSlide(index) {
+      if (index >= slides.length) currentSlide = 0;
+      else if (index < 0) currentSlide = slides.length - 1;
+      else currentSlide = index;
+  
+      slideTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+      updateDots();
+    }
+  
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+  
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+  
+    setInterval(nextSlide, 6000);
+  
+    // Dot indikator
+    const dotsContainer = document.getElementById('dots');
+    for (let i = 0; i < slides.length; i++) {
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      dot.addEventListener('click', () => showSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+  
+    function updateDots() {
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[currentSlide].classList.add('active');
+    }
+  
+    showSlide(0);
+    const quotes = [
+      "Cerdas, Tangguh, Peduli.",
+      "Berprestasi dalam Akademik dan Non-Akademik.",
+      "Mewujudkan Generasi Emas Indonesia.",
+      "Disiplin adalah Kunci Sukses.",
+      "Sekolah adalah Rumah Kedua."
+    ];
+  
+    let quoteIndex = 0;
+    const quoteText = document.getElementById('quote-text');
+  
+    setInterval(() => {
+      quoteText.style.opacity = 0;
+      setTimeout(() => {
+        quoteIndex = (quoteIndex + 1) % quotes.length;
+        quoteText.textContent = quotes[quoteIndex];
+        quoteText.style.opacity = 1;
+      }, 500);
+    }, 5000);
+
+    // ngitung
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 400; 
+  
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+  
+        const increment = Math.ceil(target / speed);
+  
+        if (count < target) {
+          counter.innerText = count + increment;
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target + '+'; // Tambahin tanda +
+        }
+      };
+  
+      updateCount();
+    });
+
+    // Guru
+
+    // Scroll ke atas
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Tampilkan tombol back-to-top saat scroll
+    window.addEventListener('scroll', function () {
+      const btn = document.querySelector('.back-to-top');
+      if (window.scrollY > 300) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+    });
+    const books = document.querySelectorAll('.book');
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImg = document.getElementById('modalImg');
+    const modalAuthor = document.getElementById('modalAuthor');
+    const modalDesc = document.getElementById('modalDesc');
+    const closeModal = document.getElementById('closeModal');
+
+    books.forEach(book => {
+      book.addEventListener('click', () => {
+        modalTitle.textContent = book.dataset.title;
+        modalImg.src = book.dataset.img;
+        modalAuthor.textContent = "Penulis: " + book.dataset.author;
+        modalDesc.textContent = book.dataset.desc;
+        modal.style.display = 'flex';
+      });
+    });
+
+    closeModal.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', e => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+
+    function filterBooks(category) {
+      books.forEach(book => {
+        if (category === 'all' || book.dataset.category === category) {
+          book.style.display = 'block';
+        } else {
+          book.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

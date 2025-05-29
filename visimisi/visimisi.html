@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Sekolah</title>
+    <link rel="icon" type="image/png" href="/images/logosma.png">
+  <link rel="stylesheet" href="visimisi.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+  <div><marquee behavior="" direction="">Selamat datang di website resmi sekolah kami! || Tahun Ajaran Baru 2025/2026 telah dimulai – Mari kita songsong dengan semangat belajar dan pelayanan terbaik! || Cek info terbaru di menu Informasi Sekolah dan Blog Guru.</marquee></div>
+
+<nav id="header">
+  <div class="navbar">
+    <div class="nav-logo"><img src="/images/logosma.png" height="30px" width="30px" alt=""></div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars" id="menu-icon"></i>
+      <i class="fas fa-times" id="close-icon" style="display: none;"></i>
+    </div>
+    
+
+    <div class="nav-links" id="navLinks">
+      <a href="/index.html">HOME</a>
+      <div class="dropdown">
+        <a>TENTANG KAMI ▾</a>
+        <div class="dropdown-content">
+          <a href="/visimisi/visimisi.html">Visi Misi</a>
+          <a href="/sejarah/sejarah.html">Sejarah</a>
+        </div>
+      </div>
+      <a href="/berita/berita.html">BERITA & PENGUMUMAN</a>
+      <a href="/guru/guru.html">GURU DAN KARYAWAN</a>
+      <a href="/learning/learning.html">E-LEARNING</a>
+      <a href="/ekskul/ekskul.html">EKSTRAKURIKULER</a>
+      <a href="/perpustakaan/perpustakaan.html">E-PERPUSTAKAAN</a>
+        <a href="/galeri/galeri.html">GALERI</a>
+
+    </div>
+  </div>
+</nav>
+
+<div class="slider-container">
+  <div class="slides" id="slideTrack">
+    <div class="slide" style="background-image: url('/images/gedung\ sekolah-artguru.png');">
+      <div class="caption">Gedung Sekolah</div>
+    </div>
+    <div class="slide" style="background-image: url('/images/Gerbang\ Sekolah-artguru.png');">
+      <div class="caption">Gerbang Sekolah</div>
+    </div>
+    <div class="slide" style="background-image: url('/images/gedung\ sekolah-artguru.png');">
+      <div class="caption">Ruang Kelas Siswa</div>
+    </div>
+  </div>
+
+  <div class="arrow left" onclick="prevSlide()"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+  <div class="arrow right" onclick="nextSlide()"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+
+  <div class="dots" id="dots"></div>
+</div>
+
+<!-- KUTIPAN OTOMATIS -->
+<div class="quote-box">
+  <span class="label">📘MOTTO</span>
+  <span id="quote-text">Cerdas, Tangguh, Keren.</span>
+</div>
+
+<!-- Sejarah -->
+<!-- Visi & Misi Section -->
+<section class="visi-misi-section">
+    <div class="container">
+      <h2 class="section-title">Visi & Misi Sekolah</h2>
+  
+      <div class="visi-box">
+        <h3 class="sub-title">Visi</h3>
+        <p class="section-text">
+          Menjadi sekolah unggulan yang mencetak generasi berkarakter, berprestasi, dan berwawasan global.
+        </p>
+      </div>
+  
+      <div class="misi-box">
+        <h3 class="sub-title">Misi</h3>
+        <ul class="section-text">
+          <li>Menyelenggarakan pembelajaran yang aktif, kreatif, dan menyenangkan.</li>
+          <li>Membentuk karakter siswa melalui kegiatan religius, sosial, dan budaya.</li>
+          <li>Mengembangkan potensi akademik dan non-akademik secara optimal.</li>
+          <li>Menanamkan nilai cinta tanah air dan kepedulian lingkungan.</li>
+          <li>Memanfaatkan teknologi untuk menunjang proses belajar-mengajar.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-grid">
+      <!-- Info Sekolah -->
+      <div class="footer-section">
+        <h2>SMA Negeri 999</h2>
+        <p>Jl. Pendidikan No.123, Kota Pelajar</p>
+        <p>Email: info@sman999.sch.id</p>
+        <p>Telp: (021) 1234567</p>
+      </div>
+
+      <!-- Navigasi -->
+      <div class="footer-section">
+        <h3>Menu</h3>
+        <ul class="fast-link">
+          <li><a href="/index.html">Beranda</a></li>
+          <li><a href="/sejarah/sejarah.html">Tentang Kami</a></li>
+          <li><a href="/berita/berita.html">Berita & Pengumuman</a></li>
+          <li><a href="/guru/guru.html">Guru dan Karyawan</a></li>
+          <li><a href="/ekskul/ekskul.html">Ekstrakurikuler</a></li>
+          <li><a href="/perpustakaan/perpustakaan.html">E-Perpustakaan</a></li>
+          <li><a href="/galeri/galeri.html">Galeri</a></li>
+        </ul>
+      </div>
+
+      <!-- Sosial Media -->
+      <div class="footer-section">
+        <h3>Ikuti Kami</h3>
+        <div class="social-icons">
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/youtube-play.png" alt="YouTube" /></a>
+        </div>
+      </div>
+
+      <!-- Lokasi -->
+      <div class="footer-section">
+        <h3>Lokasi</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31688.451824624118!2d106.8166667!3d-6.2000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1f8b7c2d3a3%3A0x0!2sSekolah%20Contoh!5e0!3m2!1sen!2sid!4v1683313170880"
+          width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <!-- Hubungi Kami -->
+      <div class="footer-section contact-form">
+        <h3>Hubungi Kami</h3>
+        <form id="footer-contact-form">
+          <input type="text" placeholder="Nama Anda" required>
+          <input type="email" placeholder="Email Anda" required>
+          <textarea placeholder="Pesan Anda" required></textarea>
+          <button type="submit">Kirim</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span>Sman999</p>
+    </div>
+  </footer>
+
+  <!-- ======= WhatsApp & Back to Top ======= -->
+
+  <button class="back-to-top" onclick="scrollToTop()"><i class="fa-solid fa-up-long"></i></button>
+  
+
+<script src="visimisi.js"></script>
+</body>
+</html>
